@@ -1,0 +1,523 @@
+/* Variables */
+
+@import "pictures.scss";
+
+/* Index Mobile */
+
+body {
+    background: linear-gradient(0deg, rgba(172,253,255,1) 0%, rgba(206,255,244,1) 54%, rgba(229,246,242,1) 100%);
+    background-size: cover;
+    background-position: center;
+        p {
+        color: rgb(31, 114, 137);
+        font-family: $family-main;
+        font-weight: 200;
+        font-size: 15px;
+        padding: 20px;
+        text-align: center;
+        }
+}
+
+#frase {
+        display: flex;
+        justify-content: center;
+        font-family: $family-main;
+        font-weight: 300;
+        font-size: 30px;
+        margin: 20px;
+        color: rgb(82, 46, 149);
+    }
+
+
+/*Grids*/
+
+/** Grid 1 Nosotros Mobile **/
+
+#grid1 {
+    display: grid;
+    padding: 15vh;
+    grid-template-columns: 1fr 1fr  ;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+    "sizefour somos"
+    "nosdes1 sizesix"
+    "sizefive nosdes2";
+
+    p {
+        font-size: 25px;
+    }
+}
+
+.sizefour {
+    grid-area: sizefour;
+}
+
+.sizefive {
+    grid-area: sizefive;
+}
+
+.somos {
+    grid-area: somos;
+}
+
+.sizesix {
+    grid-area: sizesix;
+}
+
+.nosdes1 {
+    grid-area: nosdes1;
+}
+
+.nosdes2 {
+    grid-area: nosdes2;
+}
+
+
+/* Grid 2 Index Mobile */
+
+#grid2 {
+    color: $color-main;
+    padding: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-areas: 
+    "mai1 mai2 mai3 mai4"
+    "texto1 texto2 texto3 texto4"
+    ;
+}
+
+.mainpic1 {
+    grid-area: mai1;
+    width: 100px;}
+
+.mainpic2 {
+    grid-area: mai2;
+    width: 100px;
+}
+
+.mainpic3 {
+    grid-area: mai3;
+    width: 100px;
+}
+
+.mainpic4 {
+    grid-area: mai4;
+    width: 100px;
+}
+
+.texto1 {
+    grid-area: texto1;
+}
+
+.texto2 {
+    grid-area: texto2;
+}
+
+.texto3 {
+    grid-area: texto3;
+}
+
+.texto4 {
+    grid-area: texto4;
+}
+
+
+/* Grid 3 Contacto Mobile */
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "form contacto1";
+}
+
+.contacto1 {
+    width: 40vh;
+    grid-area: contacto1;
+    margin: 5vh;
+}
+
+.pagcontacto {
+    margin: 8vh;
+    grid-area: form;
+}
+
+/* Pagina Reserva Mobile */
+
+$bg-color: #78ACCD;
+$white: #ffffff;
+$black: #333333;
+$gray: #7D8994;
+$orange: #DE6E46;
+$purple: #AE5989;
+
+$radius: 50%;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.card {
+    background: $white;
+    width: 90%;
+    max-width: 40rem;
+    min-height: 40rem;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-rows: 8rem auto 10rem;
+    box-shadow: 0 1rem 2.5rem rgb(27, 64, 94);
+
+    &__header {
+        padding: 0 1.25rem;
+        color: $gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__body {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+
+        &--days {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+
+            li {
+                flex: 1;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+                color: $gray;
+                margin: 0 1px;
+            }
+        }
+        &--dates {
+            display: grid;
+            gap: 3px;
+            grid-template-columns: repeat(7, 1fr);
+            justify-items: center;
+            text-align: center;
+            li {
+                width: 3.5rem;
+                height: 3.5rem;
+                display: grid;
+                place-items: center;
+                font-weight: bold;
+                position: relative;
+            }
+            li.prev,
+            li.next {
+                color: #ccc;
+            }
+            li.active {
+                background: $orange;
+                color: $white;
+                border-radius: $radius;
+            }
+            li.circle {
+                border: 2px solid;
+                border-radius: $radius;
+                span {
+                    position: absolute;
+                    top: -0.75rem;
+                    right: -0.5rem;
+                    width: 1.75rem;
+                    height: 1.75rem;
+                    font-size: 1.2rem;
+                    color: $white;
+                    border-radius: $radius;
+                }
+            }
+            .circle.orange {
+                border-color: $orange;
+                span {
+                    background: $orange;
+                }
+            }
+            .circle.purple {
+                border-color: $purple;
+                span {
+                    background: $purple;
+                }
+            }
+        }
+    }
+    &__footer {
+        @extend .card__header;
+        color: $black;
+        font-weight: bold;
+
+        .add {
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid $orange;
+            border-radius: $radius;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding-top: 0.25rem;
+            display: grid;
+            place-items: center;
+        }
+    }
+
+
+
+/*Media querie computadora*/
+
+@media (min-width: 720px) {
+
+    p {
+     color: rgb(71, 11, 98);
+     font-family: $family-main;
+     font-weight: 200;
+     font-size: 20px;
+     padding: 20px;
+     text-align: center;
+    }
+
+    /* Pagina Contacto */
+
+    .contacto1 {
+        width: 40vh;
+        grid-area: contacto1;
+        margin: 5vh;
+    }
+    .pagcontacto {
+        margin: 8vh;
+        grid-area: form;
+    }
+
+    .grid3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "form contacto1";
+    }
+
+    #formucon {
+        text-align: center;
+    }
+
+
+    /** Pagina Home **/
+
+    /** Grid 2 Fotos Index **/
+
+
+    #grid2 {
+        color: rgb(2, 85, 85);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        grid-template-rows: 4fr 1fr;
+        grid-template-areas: 
+        "mai1 mai2 mai3 mai4"
+        "texto1 texto2 texto3 texto4"
+        ;
+    }
+
+    .mainpic1 {
+        grid-area: mai1;
+        width: 250px;
+    }
+
+    .mainpic1:hover {
+        transform: scale(1.2);
+    }
+
+
+    .mainpic2 {
+        grid-area: mai2;
+        width: 250px;
+        transition: transform 1s;
+    }
+
+    .mainpic2:hover {
+        transform: scale(1.2);
+    }
+
+    .mainpic3 {
+        grid-area: mai3;
+        width: 250px;
+        transition: transform 1s;
+    }
+
+    .mainpic3:hover {
+        transform: scale(1.2);
+    }
+
+    .mainpic4 {
+        grid-area: mai4;
+        width: 250px;
+        transition: transform 1s;
+    }
+
+    .mainpic4:hover {
+        transform: scale(1.2);
+    }
+
+    .texto1 {
+        grid-area: texto1;
+    }
+
+    .texto2 {
+        grid-area: texto2;
+    }
+
+    .texto3 {
+        grid-area: texto3;
+    }
+
+    .texto4 {
+        grid-area: texto4;
+    }
+
+    /** Pagina Reserva **/
+
+    .preserva {
+        font-size: 1.2em;
+        padding: 30px;
+    }
+
+    /** Calendario **/
+
+    $bg-color: #78ACCD;
+    $white: #ffffff;
+    $black: #333333;
+    $gray: #7D8994;
+    $orange: #DE6E46;
+    $purple: #AE5989;
+
+    $radius: 50%;
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    ul {
+    list-style: none;
+    }
+
+    .card {
+    background: $white;
+    width: 90%;
+    max-width: 40rem;
+    min-height: 40rem;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-rows: 8rem auto 10rem;
+    box-shadow: 0 1rem 2.5rem rgb(27, 64, 94);
+
+    &__header {
+        padding: 0 1.25rem;
+        color: $gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__body {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+
+        &--days {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+
+            li {
+                flex: 1;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+                color: $gray;
+                margin: 0 1px;
+            }
+        }
+        &--dates {
+            display: grid;
+            gap: 3px;
+            grid-template-columns: repeat(7, 1fr);
+            justify-items: center;
+            text-align: center;
+            li {
+                width: 3.5rem;
+                height: 3.5rem;
+                display: grid;
+                place-items: center;
+                font-weight: bold;
+                position: relative;
+            }
+            li.prev,
+            li.next {
+                color: #ccc;
+            }
+            li.active {
+                background: $orange;
+                color: $white;
+                border-radius: $radius;
+            }
+            li.circle {
+                border: 2px solid;
+                border-radius: $radius;
+                span {
+                    position: absolute;
+                    top: -0.75rem;
+                    right: -0.5rem;
+                    width: 1.75rem;
+                    height: 1.75rem;
+                    font-size: 1.2rem;
+                    color: $white;
+                    border-radius: $radius;
+                }
+            }
+            .circle.orange {
+                border-color: $orange;
+                span {
+                    background: $orange;
+                }
+            }
+            .circle.purple {
+                border-color: $purple;
+                span {
+                    background: $purple;
+                }
+            }
+        }
+    }
+    &__footer {
+        @extend .card__header;
+        color: $black;
+        font-weight: bold;
+
+        .add {
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid $orange;
+            border-radius: $radius;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding-top: 0.25rem;
+            display: grid;
+            place-items: center;
+        }
+    }
+}}
+}  

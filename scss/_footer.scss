@@ -1,0 +1,67 @@
+
+@import "pictures.scss";
+
+footer {
+    height: 350px;
+    background-color: white;
+    .contacts {
+    color: rgb(104, 12, 165);
+    font-family: $family-main;
+    font-size: 15px;
+    text-decoration: none;
+    }
+    #redes {
+        display: flex;
+        flex: 1; 
+        justify-content: center;
+
+            div ul {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                margin: 20px;
+                li {
+                    list-style-type: none;
+                }
+            }
+    }
+
+    #mailymap {
+        padding: 30px;
+        text-align: center;
+    }
+    .icon {
+    width: 10vh;
+}
+    .icon2 {
+        width: 8vh;
+    }
+    
+}
+
+
+
+@media (min-width: 720px) {
+
+    footer {
+        height: 400px;
+        .contacts {
+            color: rgb(104, 12, 165);
+            font-family: $family-main;
+            font-size: 20px;
+            text-decoration: none;
+            }
+
+
+        #redes{
+            display: flex;
+            flex: 1;
+            justify-content: center;
+
+            div ul li {
+                text-decoration: none;
+                list-style-type: none;
+            }  
+    }
+}
+}
